@@ -1,5 +1,6 @@
 import requests
 from .models import Articles
+
 def get_news_from_api(url):
     try:
         data = requests.get(url)
