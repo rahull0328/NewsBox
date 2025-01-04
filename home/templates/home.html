@@ -15,6 +15,7 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
+    <link rel="shortcut icon" href="{% static 'img/core-img/favicon.ico' %}" type="image/x-icon">
 </head>
 
 <body>
@@ -66,17 +67,6 @@
                                             <li><a href="elements.html">Elements</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="#">Sport</a>
-                                        <ul class="dropdown">
-                                            <li><a href="#">Archery</a></li>
-                                            <li><a href="#">Badminton</a></li>
-                                            <li><a href="#">Baseball</a></li>
-                                            <li><a href="#">Boxing</a></li>
-                                            <li><a href="#">Climbing</a></li>
-                                            <li><a href="#">Cricket</a></li>
-                                            <li><a href="#">Football</a></li>
-                                        </ul>
-                                    </li>
                                     <li><a href="#">Lifestyle</a></li>
                                 </ul>
                             </div>
@@ -119,6 +109,7 @@
         <!-- Hero Post Slides -->
         <div class="hero-post-slides owl-carousel">
 
+            {% for article in articles|slice:"1" %}
             <!-- Single Slide -->
             <div class="single-slide">
                 <div class="container-fluid">
@@ -133,8 +124,8 @@
 
                                 <!-- Blog Content -->
                                 <div class="blog-content">
-                                    <span class="post-date">June 20, 2018</span>
-                                    <a href="#" class="post-title">Traffic Problems in Time Square</a>
+                                    <span class="post-date">{{article.publishedAt}}</span>
+                                    <a href="{{article.url}}" class="post-title">{{article.title}}</a>
                                 </div>
                             </div>
                         </div>
@@ -149,8 +140,8 @@
 
                                 <!-- Blog Content -->
                                 <div class="blog-content">
-                                    <span class="post-date">June 20, 2018</span>
-                                    <a href="#" class="post-title">The best way to spend your holliday</a>
+                                    <span class="post-date">{{article.publishedAt}}</span>
+                                    <a href="#" class="post-title">{{article.title}}</a>
                                 </div>
                             </div>
                             <!-- Single Blog Post Area -->
@@ -159,7 +150,7 @@
                                 <div class="blog-thumbnail bg-overlay">
                                     <a href="#"><img src="{% static 'img/bg-img/3.jpg' %}" alt=""></a>
                                 </div>
-
+                                
                                 <!-- Blog Content -->
                                 <div class="blog-content">
                                     <span class="post-date">June 20, 2018</span>
@@ -168,63 +159,9 @@
                             </div>
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
             </div>
-
-            <!-- Single Slide -->
-            <div class="single-slide">
-                <div class="container-fluid">
-                    <div class="row">
-                        <!-- Single Blog Post Area -->
-                        <div class="col-12 col-md-6">
-                            <div class="single-blog-post style-1" data-animation="fadeInUpBig" data-delay="100ms" data-duration="1000ms">
-                                <!-- Blog Thumbnail -->
-                                <div class="blog-thumbnail bg-overlay">
-                                    <a href="#"><img src="{% static 'img/bg-img/1.jpg' %}" alt=""></a>
-                                </div>
-
-                                <!-- Blog Content -->
-                                <div class="blog-content">
-                                    <span class="post-date">June 20, 2018</span>
-                                    <a href="#" class="post-title">Traffic Problems in Time Square</a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-12 col-md-6">
-                            <!-- Single Blog Post Area -->
-                            <div class="single-blog-post style-1 mb-30" data-animation="fadeInUpBig" data-delay="300ms" data-duration="1000ms">
-                                <!-- Blog Thumbnail -->
-                                <div class="blog-thumbnail bg-overlay">
-                                    <a href="#"><img src="{% static 'img/bg-img/2.jpg' %}" alt=""></a>
-                                </div>
-
-                                <!-- Blog Content -->
-                                <div class="blog-content">
-                                    <span class="post-date">June 20, 2018</span>
-                                    <a href="#" class="post-title">The best way to spend your holliday</a>
-                                </div>
-                            </div>
-                            <!-- Single Blog Post Area -->
-                            <div class="single-blog-post style-1" data-animation="fadeInUpBig" data-delay="500ms" data-duration="1000ms">
-                                <!-- Blog Thumbnail -->
-                                <div class="blog-thumbnail bg-overlay">
-                                    <a href="#"><img src="{% static 'img/bg-img/3.jpg' %}" alt=""></a>
-                                </div>
-
-                                <!-- Blog Content -->
-                                <div class="blog-content">
-                                    <span class="post-date">June 20, 2018</span>
-                                    <a href="#" class="post-title">Sport results for the weekend games</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
     <!-- ##### Hero Area End ##### -->
 
     <!-- ##### Intro News Area Start ##### -->
