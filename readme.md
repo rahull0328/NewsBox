@@ -1,4 +1,4 @@
-# 📰 NewsMania  
+# 📰 NewsBox  
 **Stay informed with the latest news around the globe!**  
 
 ---
